@@ -43,6 +43,18 @@ class Todo:
         #   Possibly preferential to return a string so we don't 
         #   exit the program
         pass # No code here yet
+
+    def remove_complete_tasks(self, todo_complete):
+        # Returns:
+        #   firstly run the see_todo_tasks function 
+        #   ask the user if they have completed any.
+        #   if Y, remove from the list.
+        # Side-effects:
+        #   Throws an exception if no task is set
+        #   Possibly preferential to return a string so we don't 
+        #   exit the program
+        pass # No code here yet
+
 ```
 
 ## 3. Create Examples as Tests
@@ -94,6 +106,18 @@ def test_return_list_of_todos_to_user():
     result = todo.view_todos()
     assert result == "TODO list:\nClean teeth\nWash hair"
 
+"""
+Test that the user can remove a task of their choice. 
+May require feedback from the program.
+"""
+def test_remove_todo_task_from_todos_list():
+    todo = Todo()
+    todo.add_todo("Clean teeth")
+    todo.add_todo("Wash hair")
+    todo.remove_todo("Wash hair")
+    result = todo.view_todos()
+    assert result == "TODO list:\nClean teeth"
+    
 ```
 
 _Encode each example as a test. You can add to the above list as you go._

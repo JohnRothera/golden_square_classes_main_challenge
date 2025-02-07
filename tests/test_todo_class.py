@@ -56,3 +56,26 @@ def test_return_list_of_todos_to_user():
     todo.add_todo("Wash hair")
     result = todo.view_todos()
     assert result == "TODO list:\nClean teeth\nWash hair"
+
+
+"""
+Test that the user can remove a task of their choice. 
+May require feedback from the program.
+"""
+
+
+def test_remove_todo_task_from_todos_list():
+    todo = Todo()
+    todo.add_todo("Clean teeth")
+    todo.add_todo("Wash hair")
+    todo.remove_todo("Wash hair")
+    result = todo.view_todos()
+    assert result == "TODO list:\nClean teeth"
+
+
+def test_remove_non_existent_todo():
+    todo = Todo()
+    todo.add_todo("Clean teeth")
+    todo.add_todo("Wash hair")
+    result = todo.remove_todo("Take out the trash")
+    assert result == "This task has been completed already"
